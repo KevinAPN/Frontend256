@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Poppins:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
+/* Definición de Colores */
+:root {
+    --primary-color: #ffffff; /* Encabezado, pie de página, botones */
+    --secondary-color: #333333; /* Gris oscuro para el logo y títulos */
+    --accent-color: #666666; /* Gris claro para detalles y subtítulos */
+    --background-color: #f0f0f0; /* Fondo principal en gris claro */
+    --background-secondary: #ffffff; /* Fondo para secciones secundarias */
+    --text-color: #333333; /* Texto principal */
+    --link-color: #111111; /* Color de enlaces en el menú */
+}
+
+/* General */
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    background: linear-gradient(180deg, #ffffff 0%, #f0f0f0 100%);
+}
+
+.menu,
+.pie-pagina {
+    background-color: var(--primary-color);
+    color: var(--link-color);
+    padding: 10px 0;
+    text-align: center;
+    width: 100%;
+}
+
+/* Header */
+.menu {
+    /*fijar encabezado*/
+    position: fixed; /* Mantiene el encabezado fijo */
+    top: 0; /* Alinea el encabezado en la parte superior */
+    left: 0; /* Alinea el encabezado a la izquierda */
+    z-index: 1000; /* Asegura de que esté encima de otros elementos */
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+}
+
+.logo {
+    width: 15%;
+    text-align: center;
+}
+
+.modamente {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.0rem;
+    color: var(--secondary-color);
+    text-align: center;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+} 
+
+.modamente span {
+    font-size: 1.5rem;
+    color: var(--accent-color); 
+}
+
+.opc-menu {
+    width: 70%;
+}
+
+.opc-menu ul {
+    display: flex;
+    list-style: none;
+    width: 100%;
+    justify-content: space-around;
+}
+
+/*efecto de linea de abajo que se agranda*/
+.opc-menu ul li a {
+    position: relative;
+    color: var(--link-color);
+    text-decoration: none;
+    overflow: hidden;
+}
+
+.opc-menu ul li a::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px; /* Grosor de la línea */
+    background-color: var(--link-color); /* Color de la línea */
+    transition: width 0.3s ease; /* Duración y tipo de transición */
+}
+
+.opc-menu ul li a:hover::before {
+    width: 100%; /* Expande la línea al 100% */
+}
+
+
+.carrito {
+    width: 15%;
+}
+
+.carrito-icon {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+/*arreglos que me toco hacer debido a la implementacion de bootstrap*/
+
+.navbar-nav {
+    width: 100% !important;
+    justify-content: center !important;
+}
+
+.navbar-nav .nav-link {
+    padding: 10px;
+}
+/* Main Content */
+
+.contenedor {
+    width: 100%;
+    padding-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+
+.titulo-form {
+    width: 100%;
+    display: block;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+
+.formulario{
+    width: 800px;
+    padding: 80px;
+}
+/* Estilo del Botón */
+
+.botones{
+    text-align: center;
+}
+.btn{
+    width: 80px;
+}
+
+/*sombras*/
+.menu, footer {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/*tipografia para titulos*/
+h2, footer h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8rem;
+    color: var(--secondary-color);
+    letter-spacing: 1.5px;
+}
+
+/* Footer */
+footer {
+    width: 100%;
+    height: 200px;
+    padding: 20px;
+    text-align: center;
+    background-color: var(--primary-color);
+    color: var(--link-color);
+}
+
+footer a {
+    color: var(--link-color);
+    text-decoration: none;
+    margin: 0 5px;
+}

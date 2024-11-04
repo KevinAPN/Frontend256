@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+    
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- DataTable -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.bootstrap5.min.css"/>
+    <!-- Estilos -->
+    <link rel="stylesheet" href="css/productos.css">
+</head>
+<body>
+    <header class="menu">
+        <div class="logo">
+            <h1 class="modamente">Moda<span>Mente</span></h1>
+        </div>
+        <nav class="opc-menu navbar navbar-expand-lg" aria-label="Menú principal">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" href="productos.html">Productos</a></li>
+                <li class="nav-item"><a class="nav-link" href="productos.html">Clientes</a></li>
+                <li class="nav-item"><a class="nav-link" href="login.html">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="contenedor">
+        <div class="mostrar-producto">
+            <h2>Módulo Productos</h2>
+            <button class="btn-agregar" onclick="window.location = 'formProductos.html'">Agregar Producto</button>
+        </div>
+        <table id="datatable_producto" class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Descripción</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Stock</th>
+                    <th scope="col">Categoría</th>
+                    <th scope="col">Imagen</th>
+                    <th scope="col">Fecha de Subida</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="productos-table"></tbody>
+        </table>
+    </div>
+    <footer class="pie-pagina">
+        <h2>Contacto y Redes</h2>
+        <p>Síguenos en nuestras redes sociales para estar al tanto de nuestras últimas tendencias y promociones:</p>
+        <p><a href="#">Facebook</a> | <a href="#">Twitter</a> | <a href="#">Instagram</a></p>
+        <p>&copy; Tienda de Ropa en Línea - Todos los derechos reservados.</p>
+    </footer>
+    
+
+
+    <!-- Modal para la imagen -->
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="imageModalLabel">Imagen del Producto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <img src="" id="modalImage" alt="Imagen del Producto" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap Bundle JS (que incluye Popper.js) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- DataTables JS -->
+    <script src="https://cdn.datatables.net/2.1.8/js/dataTables.js"></script>
+    <script src="https://cdn.datatables.net/2.1.8/js/dataTables.bootstrap5.min.js"></script>
+    <!-- JS -->
+    <script src="js/request.js"></script>
+    <script src="js/productos.js"></script>
+    <script>
+        window.onload = function(){
+            initDataTable();
+        }
+    </script>
+    </body>
+</html>

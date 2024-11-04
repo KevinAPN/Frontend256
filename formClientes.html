@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>formulario clientes</title>
+    
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/formClientes.css">
+    
+</head>
+<body>
+    <header class="menu">
+        <div class="logo">
+            <h1 class="modamente">Moda<span>Mente</span></h1>
+        </div>
+        <nav class="opc-menu navbar navbar-expand-lg" aria-label="Menú principal">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" href="productos.html">Productos</a></li>
+                <li class="nav-item"><a class="nav-link" href="productos.html">Clientes</a></li>
+                <li class="nav-item"><a class="nav-link" href="login.html">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="contenedor">
+        <div class="row titulo-form align-items-center mb-4">
+            <h2 class="fw-bold w-auto">Formulario Clientes</h2>
+        </div>
+        <div class="row formulario">
+            <form class="mt-4" action="" onsubmit="" method="POST">
+                <div class="mb-3">  
+                    <label for="nombres" class="form-label">Nombres</label>  
+                    <input type="text" class="form-control" name="nombres-n" id="nombres-n">  
+                </div>  
+                
+                <div class="mb-3">  
+                    <label for="apellidos" class="form-label">Apellidos</label>  
+                    <input type="text" class="form-control" name="apellidos-a" id="apellidos-a">  
+                </div>  
+                
+                <div class="mb-3">  
+                    <label for="documento" class="form-label">Documento</label>  
+                    <input type="text" class="form-control" name="documento-d" id="documento-d">  
+                </div>  
+                
+                <div class="mb-3">  
+                    <label for="correo" class="form-label">Correo Electronico</label>  
+                    <input type="text" class="form-control" name="correo-c" id="correo-c">  
+                </div>  
+                
+                <div class="mb-3">  
+                    <label for="telefono" class="form-label">Telefono</label>  
+                    <input type="text" class="form-control" name="telefono-t" id="telefono-t">  
+                </div>  
+                
+                <div class="mb-3">  
+                    <label for="direccion" class="form-label">Direccion</label>  
+                    <input type="text" class="form-control" name="direccion-d" id="direccion-d">  
+                </div>
+                <div class="botones">
+                    <button type="button" class="btn btn-success" onclick="guardarClientes()">Guardar</button>
+                    <button type="button" class="btn btn-primary" id="btn-editar">Editar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <footer class="pie-pagina">
+        <h2>Contacto y Redes</h2>
+        <p>Síguenos en nuestras redes sociales para estar al tanto de nuestras últimas tendencias y promociones:</p>
+        <p><a href="#">Facebook</a> | <a href="#">Twitter</a> | <a href="#">Instagram</a></p>
+        <p>&copy; Tienda de Ropa en Línea - Todos los derechos reservados.</p>
+    </footer>
+    
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- JS -->
+    <script src="js/request.js"></script>
+    <script src="js/clientes.js"></script>
+
+    <script>
+        window.onload = function(){
+            let boton = document.getElementById("btn-editar");
+            const url = new URLSearchParams(window.location.search);
+            cargarDatos(url.get('id'));
+            boton.onclick = () =>{
+                modificarClientes(url.get('id'));
+            }
+        }
+    </script>
+</body>
+</html>
